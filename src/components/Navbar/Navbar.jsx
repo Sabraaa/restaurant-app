@@ -6,19 +6,19 @@ import images from "../../constants/images";
 
 const Menu = () => (
   <>
-    <li className="p__opensans">
+    <li className="app__navbar-links_li p__opensans">
       <a href="#home"> Home</a>
     </li>
-    <li className="p__opensans">
+    <li className="app__navbar-links_li p__opensans">
       <a href="#about"> About</a>
     </li>
-    <li className="p__opensans">
+    <li className="app__navbar-links_li p__opensans">
       <a href="#menu"> Menu</a>
     </li>
-    <li className="p__opensans">
+    <li className="app__navbar-links_li p__opensans">
       <a href="#awards"> Awards</a>
     </li>
-    <li className="p__opensans">
+    <li className="app__navbar-links_li p__opensans">
       <a href="#contact"> Contact</a>
     </li>
   </>
@@ -43,14 +43,14 @@ const Navbar = () => {
         </a>
       </div>
       <div className="app__navbar-smallscreen">
-        <GiHamburgerMenu onClick={() => setToggleMenu(false)} />
+        <GiHamburgerMenu  color="#fff" fontSize={27} onClick={() => setToggleMenu(true)} />
         {toggleMenu && (
-        <div className="app__navbar-smallscreen_overlay">
-          <MdOutlineRestaurantMenu />
-          <ul className="app__navbar-smallsccreen-links">
-            <Menu />
-          </ul>
-        </div>
+          <div className="app__navbar-smallscreen_overlay flex__center slide-bottom">
+            <MdOutlineRestaurantMenu className="overlay__close"  fontSize={27} onClick={()=>setToggleMenu(false)} />
+            <ul className="app__navbar-smallsccreen-links">
+              <Menu />
+            </ul>
+          </div>
         )}
       </div>
     </div>
